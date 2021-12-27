@@ -1,19 +1,19 @@
 runners:
- local-runner:
+ example-runner:
   image: ubuntu-generic
 
 jobs:   
- job-test:
-  runner: local-runner
+ hello-world:
+  runner: example-runner
+  
   steps:
    - run:
-      name: Test
-      command: |
-       echo "start"
-       
+      name: Say Hello World
+      command: echo "Hello World"
+      
 workflows:
- workflow-test:
+ hello-world-workflow:
   triggers:
-   - manual  
+   - manual
   jobs:
-   - job-test
+   - hello-world
