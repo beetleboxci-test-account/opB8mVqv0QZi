@@ -1,0 +1,19 @@
+runners:
+ local-runner:
+  image: ubuntu-generic
+
+jobs:   
+ job-test:
+  runner: local-runner
+  steps:
+   - run:
+      name: Test
+      command: |
+       echo "start"
+       
+workflows:
+ workflow-test:
+  triggers:
+   - manual  
+  jobs:
+   - job-test
